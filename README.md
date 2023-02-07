@@ -9,13 +9,16 @@
 Markdown Renderer written in Zig using webview.
 
 
-## Install
+## Build
 
 ```bash
 git clone --recurse-submodules https://github.com/telamon/marz
 cd marz
 zig build
 ```
+If fails, check reqreqs of:
+- [webview](https://github.com/webview/webview)
+- [koino](https://github.com/kivikakk/koino)
 
 ## Use
 
@@ -32,8 +35,6 @@ marz README.md
 - `p` print pdf
 
 
-DecentLabs Discord: https://discord.gg/8RMRUPZ9RS
-
 ---
-Licsense: AGPLv3 | DecentLabs 2023
+Licsense: AGPLv3 | DecentLabs 2023 | [DLabs Discord](https://discord.gg/8RMRUPZ9RS)
 
