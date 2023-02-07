@@ -8,6 +8,7 @@
 
 Markdown Renderer written in Zig using webview.
 
+![Marz Screenshot](./swappy-20230207_230504.png)
 
 ## Install
 
