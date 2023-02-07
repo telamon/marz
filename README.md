@@ -4,8 +4,8 @@
 | '_ ` _ \ / _` | '__|_  /
 | | | | | | (_| | |   / /
 |_| |_| |_|\__,_|_|  /___|
+https://discord.gg/8RMRUPZ9RS
 ```
-
 Markdown Renderer written in Zig using webview.
 
 ![Marz Screenshot](./swappy-20230207_230504.png)
@@ -37,5 +37,5 @@ marz README.md
 
 
 ---
-Licsense: AGPLv3 | DecentLabs 2023 | [DLabs Discord](https://discord.gg/8RMRUPZ9RS)
+Licsense: AGPLv3 | DecentLabs 2023
 
