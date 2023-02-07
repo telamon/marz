@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script>
+  const w = window
+  w.addEventListener('keydown', event => {
+    switch(event.key) {
+      case 'p': return window.print();
+      case 'j': // Scroll down
+        return window.scrollBy({
+          left: 0,
+          top: window.innerHeight / 5,
+          behaviour: 'smooth',
+        })
+      case 'k': // Scroll up
+        return window.scrollBy({
+          left: 0,
+          top: window.innerHeight / -5,
+          behaviour: 'smooth',
+        })
+      case 'Backspace':
+        // Dosen't work if navigate away.
+        return w.location.back();
+      case ':':
+        // inputting the : in https:// retriggers a prompt.
+        w.location = prompt('Go where?');
+        break;
+      default:
+        w.z_keyup(event.key);
+    }
+  })
+</script>
+<style>
+:root { /* Light Theme */
+  --background: ghostwhite;
+  --color: rgb(47, 56, 62);
+  --primary: purple;
+  --subtle: #444;
+  --bleak: #eee;
+
+  /*optional*/
+  --ca: var(--primary);
+  --ch1: var(--color);
+  --ch2: var(--primary);
+  --ch3: var(--color);
+  --ch4: var(--color);
+  --ch5: var(--color);
+  --chr: var(--background);
+  --cstrong: var(--color);
+}
+
+body[data-theme=dark] { /* Dark Theme */
+  /* everforest - palette */
+  --grah: rgb(47, 56, 62);
+  --rust: rgb(219, 121, 123);
+  --leaf: rgb(154, 178, 120);
+  --yell: rgb(203, 175, 120);
+  --rock: rgb(129, 142, 133);
+  --copp: rgb(208, 140, 109);
+  --lead: rgb(115, 168, 162);
+  --viol: rgb(205, 148, 176);
+  --slat: rgb(44, 50, 61);
+
+  --primary: var(--viol);
+  --background: var(--grah);
+  --color: #bbbba9;
+  --subtle: var(--rock);
+  --bleak: var(--slat);
+  --ca: var(--rust);
+  --ch1: var(--primary);
+  --ch2: var(--primary);
+  --ch3:  var(--color);
+  --ch4: var(--subtle);
+  --ch5: var(--lead);
+  --chr: var(--background);
+  --cstrong: var(--subtle);
+}
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+  "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 17px;
+  background-color: var(--background);
+}
+a { color: var(--ca); text-decoration: none; }
+h1 { font-size: 2rem; line-height: 3rem; color: var(--ch1); }
+h2 { font-size: 1.75rem; line-height: 2.625rem; color: var(--ch2); }
+h3 { font-size: 1.5rem; line-height: 2.25rem; color: var(--ch3); }
+h4 { font-size: 1.25rem; line-height: 1.874rem; color: var(--ch4); }
+h5 { font-size: 1.125rem; line-height: 1.6875rem; color: var(--ch5); }
+h1,h2,h3,h4,h5,h6 { font-weight: 300; margin-bottom: 30px; margin-top: 3rem; }
+h1:first-child { margin-top: 2rem; font-size: 2.5rem; }
+pre,code,kbd,samp {
+  font-family: "DejaVu Sans Mono" "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace",
+    "Noto Mono", "Oxygen Mono", "Liberation Mono", monospace,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+body { padding: 1em 2em; max-width: 700px; color: var(--color); }
+img { max-width: 100%; height: auto; }
+em { color: var(--subtle); }
+blockquote {
+  border-left: 5px solid var(--bleak);
+  color: var(--subtle);
+  margin-left: 0;
+  padding: 0.01rem 2em;
+}
+pre {
+  background-color: var(--bleak);
+  word-wrap: normal;
+  padding: 16px;
+  overflow: auto;
+  border-radius: 2px;
+  font-size: 0.8em;
+  line-height: 1.25;
+  padding: 1em;
+  /* line-height: 1.3; */
+}
+pre code.language-js {}
+pre code.language-bash {}
+p strong { color: var(--cstrong); }
+p code, li code {
+  border-radius: 2px;
+  padding: 2px 6px;
+  margin: 0 1px;
+  /* background-color: var(--primary);
+  color: var(--primary-inverse);*/
+  background-color: var(--bleak);
+  color: var(--subtle);
+  font-size: 0.8em;
+  display: inline-block;
+}
+hr { border: none; border-bottom: 2px dashed var(--chr);
+  margin-bottom: 5em; margin-top: 3em; }
+/*alt hr*/
+hr { border-bottom: 2px solid var(--chr);
+    max-width: 25vw; margin-left: 0; }
+
+table { border: 4px bleh var(--bleak); }
+table thead { background-color: var(--bleak); font-size: 0.8em; }
+table thead th { color: var(--primary); }
+table th, table td { padding: 4px 6px; }
+table td { color: var(--color); }
+table tr:nth-child(even) td {
+  background-color: var(--bleak); color: var(--subtle); }
+
+@media print {
+  hr { break-after: page; }
+  h1,h2,h3,h4,h5,h6 { break-after: avoid-page; }
+}
+</style>
+</head>
+<body data-theme="dark">
